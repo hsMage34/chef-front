@@ -2,24 +2,24 @@
   <h1>Inscription</h1>
 
   <form @submit.prevent="createRestorer">
-    <label for="firstname">Your firstname</label>
+    <label for="firstname">Your firstname : </label>
     <input
       type="text"
       name="firstname"
       placeholder="John"
       v-model="firstname"
     />
-    <label for="lastname">Your name</label>
+    <label for="lastname">Your name : </label>
     <input type="text" name="lastname" placeholder="Smith" v-model="lastname" />
 
-    <label for="email">Your email adress</label>
+    <label for="email">Your email adress : </label>
     <input
       type="text"
       name="email"
       placeholder="Jsmitch@gmail.com"
       v-model="email"
     />
-    <label for="firstname">Create un password</label>
+    <label for="firstname">Create un password : </label>
     <input
       type="password"
       name="password"
@@ -83,4 +83,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+
+
+
+
+
+</style>

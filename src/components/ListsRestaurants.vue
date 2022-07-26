@@ -1,34 +1,13 @@
 <template>
-
-  <h1>Créer votre restaurant</h1>
-
-  <form @submit.prevent="createRestorant">
-    <label for="nameRestorant">Nom : </label>
-    <input
-      type="text"
-      name="nameRestorant"
-      placeholder="Indiquez le nom de votre restaurant"
-      v-model="nameRestorant"
-    />
-    <label for="adress">Adresse : </label>
-    <input
-      type="text"
-      name="adress"
-      placeholder="Indiquez l'adresse complète"
-      v-model="adress"
-    />
-    <label for="hours">Horaires : </label>
-    <input
-      type="text"
-      name="hours"
-      placeholder="Indiquez les horaires d'ouvertures et de fermetures"
-      v-model="hours"
-    />
-    <label for="picture">Images : </label>
-    <input type="text" name="picture" v-model="picture" />
-
-    <input type="submit" value="Je valide" @click="getRestorants" />
-  </form>
+  <h1>La liste de vos restaurants</h1>
+    <li v-for="restorant in restorants" :key="restorant.id">
+        <ul>
+            <p>Nom : {{restorant.nameRestorant}}</p>
+            <p>Adresse : {{restorant.adress}}</p>
+            <p>Horaires : {{restorant.hours}}</p>
+            <p>Images : {{restorant.images}}</p>
+        </ul>
+    </li>
 </template>
 
 <script>
@@ -53,7 +32,7 @@ export default {
       });
 
       const data = await response.json();
-      console.log(data);
+      this.restorants = data.restorants;
     },
 
     async createRestorant() {
